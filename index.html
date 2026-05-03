@@ -759,6 +759,7 @@
           <div class="t-line"><span class="t-key">"experience_yrs"</span><span>:</span>&nbsp;<span class="t-bool">4</span>,</div>
           <div class="t-line"><span class="t-key">"cloud"</span><span>:</span>&nbsp;<span class="t-string">"AWS"</span>,</div>
           <div class="t-line"><span class="t-key">"iac"</span><span>:</span>&nbsp;<span class="t-string">"Terraform"</span>,</div>
+          <div class="t-line"><span class="t-key">"stack"</span><span>:</span>&nbsp;<span class="t-string">"EKS · Terraform · GitHub Actions"</span>,</div>
           <div class="t-line"><span class="t-key">"certs_in_progress"</span><span>:</span>&nbsp;<span class="t-string">"AWS SAA"</span>,</div>
           <div class="t-line"><span class="t-key">"open_to_work"</span><span>:</span>&nbsp;<span class="t-bool">true</span></div>
           <div style="height:14px"></div>
@@ -794,7 +795,7 @@
           <div class="stat-label">Enterprise network experience</div>
         </div>
         <div class="stat-card">
-          <div class="stat-num">2<span>+</span></div>
+          <div class="stat-num">3</div>
           <div class="stat-label">AWS infra projects on GitHub</div>
         </div>
         <div class="stat-card">
@@ -822,11 +823,11 @@
             <span class="tag active">VPC</span>
             <span class="tag active">ALB</span>
             <span class="tag active">S3</span>
-            <span class="tag active">IAM</span>
+            <span class="tag active">IAM / OIDC</span>
             <span class="tag active">Route 53</span>
-            <span class="tag active">Security Groups</span>
+            <span class="tag active">ECR</span>
+            <span class="tag active">EKS</span>
             <span class="tag learning">CloudWatch ↗</span>
-            <span class="tag learning">EKS ↗</span>
           </div>
         </div>
         <div class="skill-group">
@@ -836,8 +837,8 @@
             <span class="tag active">Modular architecture</span>
             <span class="tag active">State management</span>
             <span class="tag active">moved.tf</span>
-            <span class="tag learning">GitHub Actions CI/CD ↗</span>
-            <span class="tag learning">Docker ↗</span>
+            <span class="tag active">GitHub Actions CI/CD</span>
+            <span class="tag active">Docker</span>
           </div>
         </div>
         <div class="skill-group">
@@ -854,34 +855,38 @@
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-title">DevOps & Tooling</div>
+          <div class="skill-group-title">Containers & Orchestration</div>
           <div class="skill-tags">
-            <span class="tag active">Git / GitHub</span>
-            <span class="tag active">Linux CLI</span>
-            <span class="tag active">Bash</span>
-            <span class="tag active">VS Code</span>
-            <span class="tag learning">Kubernetes ↗</span>
-            <span class="tag learning">Prometheus ↗</span>
+            <span class="tag active">Docker</span>
+            <span class="tag active">Docker Compose</span>
+            <span class="tag active">Kubernetes</span>
+            <span class="tag active">EKS</span>
+            <span class="tag active">HPA</span>
+            <span class="tag active">Ingress / Nginx</span>
+            <span class="tag active">cert-manager</span>
+            <span class="tag active">Helm</span>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-title">Enterprise Context</div>
+          <div class="skill-group-title">Observability</div>
           <div class="skill-tags">
-            <span class="tag active">Change Control</span>
-            <span class="tag active">Incident Response</span>
-            <span class="tag active">Financial Infra</span>
-            <span class="tag active">High Availability</span>
-            <span class="tag active">Rotating Ops</span>
+            <span class="tag active">Prometheus</span>
+            <span class="tag active">Grafana</span>
+            <span class="tag active">Alertmanager</span>
+            <span class="tag active">cAdvisor</span>
+            <span class="tag active">Node Exporter</span>
+            <span class="tag active">SolarWinds</span>
+            <span class="tag active">ThousandEyes</span>
           </div>
         </div>
         <div class="skill-group">
           <div class="skill-group-title">In Progress</div>
           <div class="skill-tags">
             <span class="tag learning">AWS SAA Cert ↗</span>
-            <span class="tag learning">GitHub Actions ↗</span>
-            <span class="tag learning">Docker ↗</span>
-            <span class="tag learning">EKS / Kubernetes ↗</span>
+            <span class="tag learning">ArgoCD ↗</span>
+            <span class="tag learning">Istio ↗</span>
             <span class="tag learning">CloudWatch ↗</span>
+            <span class="tag learning">Python / Bash scripting ↗</span>
           </div>
         </div>
       </div>
@@ -899,10 +904,34 @@
 
       <!-- Featured -->
       <div class="project-card project-featured">
-        <div class="project-type">Featured · AWS + Terraform</div>
+        <div class="project-type">Featured · End-to-End DevOps Lab</div>
+        <div class="project-title">Production-Grade Flask App on AWS EKS</div>
+        <div class="project-desc">
+          A full DevOps platform built from scratch — local Docker Compose stack through to a live, auto-scaling Kubernetes deployment on AWS with automated CI/CD. A Python Flask API serves health, metrics, and readiness endpoints. The monitoring stack (Prometheus, Grafana, Alertmanager, cAdvisor, Node Exporter) runs alongside the app. Infrastructure is provisioned via modular Terraform across four modules: vpc, eks, ecr, and cloudflare. Kubernetes manifests handle deployments, ingress, HPA, and cert-manager SSL. Every push to <code style="color:var(--accent);font-size:11px">main</code> triggers a 3-stage GitHub Actions pipeline: test → build & push to ECR → deploy to EKS. OIDC authentication throughout — no long-lived AWS credentials stored anywhere.
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag">Python / Flask</span>
+          <span class="stack-tag">Docker</span>
+          <span class="stack-tag">AWS EKS</span>
+          <span class="stack-tag">Terraform</span>
+          <span class="stack-tag">Kubernetes</span>
+          <span class="stack-tag">GitHub Actions</span>
+          <span class="stack-tag">OIDC</span>
+          <span class="stack-tag">Prometheus</span>
+          <span class="stack-tag">Grafana</span>
+          <span class="stack-tag">Alertmanager</span>
+          <span class="stack-tag">cert-manager</span>
+          <span class="stack-tag">Cloudflare</span>
+          <span class="stack-tag">HPA</span>
+        </div>
+        <a href="https://github.com/yoonis2000/devops" target="_blank" rel="noopener" class="project-link">github.com/yoonis2000/devops</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-type">AWS · Terraform · IaC</div>
         <div class="project-title">Modular ALB + Private EC2 Infrastructure</div>
         <div class="project-desc">
-          Production-style AWS infrastructure built with Terraform. An Application Load Balancer routes traffic to private EC2 instances inside a custom VPC — no direct internet exposure. Refactored from a flat Terraform layout into a three-module architecture (vpc, alb, compute) using <code style="color:var(--accent);font-size:11px">moved.tf</code> blocks to eliminate state destruction during the refactor. Reduced a 19-destroy plan to zero.
+          Production-style AWS infrastructure built with Terraform. An ALB routes traffic to private EC2 instances inside a custom VPC — no direct internet exposure. Refactored from a flat layout into a three-module architecture (vpc, alb, compute) using <code style="color:var(--accent);font-size:11px">moved.tf</code> blocks to eliminate state destruction. Reduced a 19-destroy plan to zero.
         </div>
         <div class="project-stack">
           <span class="stack-tag">Terraform</span>
@@ -910,39 +939,25 @@
           <span class="stack-tag">ALB</span>
           <span class="stack-tag">EC2</span>
           <span class="stack-tag">IAM</span>
-          <span class="stack-tag">Security Groups</span>
           <span class="stack-tag">Modular IaC</span>
         </div>
         <a href="https://github.com/yoonis2000/terraform-aws-alb-private-ec2" target="_blank" rel="noopener" class="project-link">github.com/yoonis2000/terraform-aws-alb-private-ec2</a>
       </div>
 
       <div class="project-card">
-        <div class="project-type">AWS · Networking</div>
-        <div class="project-title">ALB + Private EC2 (Console)</div>
+        <div class="project-type">AWS · Networking · Console Build</div>
+        <div class="project-title">ALB + Private EC2 (Console Build)</div>
         <div class="project-desc">
-          The original hand-built version of the same architecture — deployed via AWS Console. Documents the manual process before it was fully codified in Terraform. Useful reference for understanding what the IaC automates.
+          The original hand-built version of the same ALB architecture — deployed via AWS Console before being codified in Terraform. Documents the manual process and serves as a reference for understanding what the IaC automates beneath the surface.
         </div>
         <div class="project-stack">
           <span class="stack-tag">AWS Console</span>
           <span class="stack-tag">ALB</span>
           <span class="stack-tag">EC2</span>
           <span class="stack-tag">VPC</span>
+          <span class="stack-tag">Security Groups</span>
         </div>
         <a href="https://github.com/yoonis2000/aws-alb-private-ec2" target="_blank" rel="noopener" class="project-link">github.com/yoonis2000/aws-alb-private-ec2</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-type">Coming Soon</div>
-        <div class="project-title">GitHub Actions CI/CD Pipeline</div>
-        <div class="project-desc">
-          Automating Terraform plan/apply via GitHub Actions. Next step in the learning roadmap — CI/CD for infrastructure changes with proper gating and review steps.
-        </div>
-        <div class="project-stack">
-          <span class="stack-tag">GitHub Actions</span>
-          <span class="stack-tag">Terraform</span>
-          <span class="stack-tag">AWS</span>
-        </div>
-        <span class="project-link" style="color:var(--muted);cursor:default">In progress</span>
       </div>
 
     </div>
@@ -957,7 +972,7 @@
     <div class="exp-list">
       <div class="exp-item">
         <div class="exp-meta">
-          <div class="exp-date">2021 – Present</div>
+          <div class="exp-date">2022 – Present</div>
           <div class="exp-company">Visa</div>
         </div>
         <div>
@@ -984,7 +999,7 @@
     <div class="contact-links">
       <a href="https://github.com/yoonis2000" target="_blank" rel="noopener" class="btn btn-primary">GitHub</a>
       <a href="https://linkedin.com/in/yoonis" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn ↗</a>
-      <a href="mailto:hello@yoonis.dev" class="btn btn-secondary">hello@yoonis.dev</a>
+      <a href="mailto:hello@yoonis.dev" class="btn btn-primary">hello@yoonis.dev</a>
     </div>
   </div>
 
